@@ -27,7 +27,7 @@ workplace = answer.capitalize()
 def cutscene():
     typeIt('\n\t\tIt is Tuesday 9:00PM.')
     time.sleep(.7)
-    typeIt('\n\t\tYou just did a 15 hour shift at ' + workplace +' for $10.00 / hour.')
+    typeIt(f'\n\t\tYou just did a 15 hour shift at {workplace} for $10.00 / hour.')
     time.sleep(.7)
     typeIt('\n\t\tYou dread going to work the next day. ')
     time.sleep(.7)
@@ -44,7 +44,7 @@ if cutAnswer.lower() == 'n':
     cutscene()
 
 age = str(random.randint(65,99))
-typeIt('\n\t\tYou are in the ' + workplace +' parking-lot walking towards your car when you come across an Old Man of age')
+typeIt(f'\n\t\tYou are in the {workplace} parking-lot walking towards your car when you come across an Old Man of age')
 typeItSlow(3)
 typeIt(str(age) + '.')
 time.sleep(0.7)
@@ -59,19 +59,19 @@ def rob():
         if winning_number == i:
             cash += mans_cash
             typeItSlow(4)
-            typeIt('Success! +$'+ str(mans_cash)+'\n')
+            typeIt(f'Success! +${mans_cash}\n')
             return 0
     knife = 50
     death += knife
     typeItSlow(6)
-    typeIt('Failed. You have been reported. Danger level: ' + str(death)+'\n')
+    typeIt(f'Failed. You have been reported. Danger level: {death}\n')
 
 def kindness():
     global cash,luck
     add_luck = random.randint(8,12)
     print('\t\t',end='')
     typeItSlow(7)
-    typeIt('+' + str(add_luck) +' Luck')
+    typeIt(f'+{add_luck} Luck')
     oldmanphrases()
     time.sleep(0.7)
     print()
@@ -80,14 +80,14 @@ def kindness():
 
 def oldmanphrases():
     if count < 7:
-        typeIt('\n\t\t\tOld Man: "Bless your kind soul."')
+        typeIt(f'\n\t\t\tOld Man: "Bless your kind soul."')
     elif count > 6:
-        typeIt('\n\t\t\tOld Man: "You startin\' to get on my nerves!"')    
+        typeIt(f'\n\t\t\tOld Man: "You startin\' to get on my nerves!"')    
     
 def level1():
     print()
-    typeIt('\t\tAttempt(' + str(count) + ') Your STATS:\tLUCK: ' +str(luck) + '\tCASH: $' +str(cash))
-    typeIt('\n\t\tRob him? (y/n): ')
+    typeIt(f'\t\tAttempt({count}) Your STATS:\tLUCK ~ {luck}\tCASH ~ ${cash}')
+    typeIt(f'\n\t\tRob him? (y/n): ')
     answer = input()
     if answer.lower() == 'y':
         rob()
@@ -95,8 +95,8 @@ def level1():
         kindness()
 
 def degenerate():
-    prison = random.randint(30,100)
-    typeIt("\t\tPolice have stormed your home.\n\t\tYou have been convicted and sentenced to "+str(prison)+" years in prison.\n\t\t")
+    prisonSentence = random.randint(30,100)
+    typeIt(f"\t\tPolice have stormed your home.\n\t\tYou have been convicted and sentenced to {prisonSentence} years in prison.\n\t\t")
     time.sleep(1)
     typeIt("DEGENERATE!")
     time.sleep(1)
@@ -115,7 +115,7 @@ def annoying():
     time.sleep(.8)
     typeIt("Your car is gone too. ")
     time.sleep(.8)
-    typeIt("And you have been fired from " + workplace)
+    typeIt(f"And you have been fired from {workplace}")
     time.sleep(2)
     typeIt("\n\t\tGAME OVER!")
     time.sleep(1)
@@ -125,7 +125,7 @@ def annoying():
 def level2():
     print('\t\t',end='')
     typeItSlow(7)
-    typeIt(' You quit your job, take the $' +str(cash) +' and drive West.')
+    typeIt(f'You quit your job, take the ${cash} and drive West.')
     typeItSlow(4)
     typeIt('\n\t\tYou start a small online business.')
     typeItSlow(4)
