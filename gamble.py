@@ -1,6 +1,7 @@
 import random
 import time 
 import sys
+import string
 
 death = 0
 luck = 50
@@ -22,7 +23,7 @@ typeIt('\n\t\t\tGAMBLING MAN I\n\t\t\tTHE LIFE OF A DEGENERATE\n')
 typeIt('\t\tWhere do you work? ')
 
 answer = input()
-workplace = answer.capitalize()
+workplace = string.capwords(answer)
 
 def cutscene():
     typeIt('\n\t\tIt is Tuesday 9:00PM.')
@@ -44,9 +45,10 @@ if cutAnswer.lower() == 'n':
     cutscene()
 
 age = str(random.randint(65,99))
+typeIt('\n\t\tYou dream of starting a new life but you need $1000 first.')
 typeIt(f'\n\t\tYou are in the {workplace} parking-lot walking towards your car when you come across an Old Man of age')
-typeItSlow(3)
-typeIt(str(age) + '.')
+typeItSlow(2)
+typeIt(f'{age}.')
 time.sleep(0.7)
 print()
     
@@ -71,7 +73,7 @@ def kindness():
     add_luck = random.randint(8,12)
     print('\t\t',end='')
     typeItSlow(7)
-    typeIt(f'+{add_luck} Luck')
+    typeIt(f'+{add_luck} LUCK')
     oldmanphrases()
     time.sleep(0.7)
     print()
@@ -79,14 +81,14 @@ def kindness():
         luck += add_luck
 
 def oldmanphrases():
-    if count < 7:
+    if count < 5:
         typeIt(f'\n\t\t\tOld Man: "Bless your kind soul."')
-    elif count > 6:
+    elif count >= 5:
         typeIt(f'\n\t\t\tOld Man: "You startin\' to get on my nerves!"')    
     
 def level1():
     print()
-    typeIt(f'\t\tAttempt({count}) Your STATS:\tLUCK ~ {luck}\tCASH ~ ${cash}')
+    typeIt(f'\t\tAttempt({count})\n\t\tYour STATS:\tLUCK ~ [{luck}]\tCASH ~ $[{cash}]')
     typeIt(f'\n\t\tRob him? (y/n): ')
     answer = input()
     if answer.lower() == 'y':
