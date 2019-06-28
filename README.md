@@ -1,4 +1,4 @@
-## Gambler
+## Gambling.py
 Fun little game about life and chance
 
 Play the game yourself! Open via a terminal with either ***./gambling.py*** or ***python gambling.py***
