@@ -1,7 +1,8 @@
-import random
-import time 
-import sys
-import string
+#!/usr/bin/python3
+
+import random, time, sys, string, logging
+logging.basicConfig(level=logging.DEBUG)
+logging.disable(logging.CRITICAL)
 
 death = 0
 luck = 50
@@ -47,8 +48,7 @@ if cutAnswer.lower() == 'n':
 age = str(random.randint(65,99))
 typeIt('\n\t\tYou dream of starting a new life but you need $1000 first.')
 typeIt(f'\n\t\tYou are in the {workplace} parking-lot walking towards your car when you come across an Old Man of age')
-typeItSlow(2)
-typeIt(f'{age}.')
+typeIt(f' {age}.')
 time.sleep(0.7)
 print()
     
@@ -57,12 +57,13 @@ def rob():
     winning_number = random.randint(0,100)
     mans_cash = random.randint(130,250)
     print('\t\t', end='')
+    logging.debug(f"winning number: {winning_number}") 
     for i in range(luck):
         if winning_number == i:
             cash += mans_cash
             typeItSlow(4)
             typeIt(f'Success! +${mans_cash}\n')
-            return 0
+            return 0       
     knife = 50
     death += knife
     typeItSlow(6)
